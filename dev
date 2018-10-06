@@ -1,0 +1,7 @@
+#!/bin/bash
+docker build -t mkdocs .
+docker rm -f mkdocs 
+docker run\
+ -v $PWD/docs:/data/docs\
+ -p 8000:8000\
+ mkdocs
